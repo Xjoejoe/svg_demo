@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>svg</title>
+</head>
+<body>
+	<div class="svg_ctn" style="width:300px;height:300px;position:relative;">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+			viewBox = "0 0 300 200"
+		>
+			<defs>
+				<linearGradient id = 'fade'>
+					<stop offset="0%" stop-color='#008'/>
+					<stop offset="100%" stop-color='#ccf'/>
+				</linearGradient>
+			</defs>
+			<path d="M0 0 L0 0 L100 0 L100 100 L50 50 L0 100 Z" stroke-width="2px" id="svg_path" fill="url(#fade)"></path>
+		</svg>
+		<div class="content" style="position:absolute;top:60px;left:55px;">123123</div>
+	</div>
+<script>
+	var s_path = document.getElementById('svg_path');
+	var height = 100;
+	var timer = setInterval(function(){
+		height-=5;
+		if(height<=40){
+			clearInterval(timer);
+		}
+		s_path.setAttribute('d',"M0 0 L0 0 L100 0 L100 "+height+" L50 50 L0 "+height+" Z");
+	},60);
+	console.log(s_path);
+</script>
+</body>
+</html>
