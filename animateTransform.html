@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animateTransform</title>
+</head>
+<body>
+	<div class="container">
+		<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+			<g>
+				<rect x='60' y = '60' width="60" height="60" style="fill:#0f0;stroke:black">
+					<animateTransform 
+						attributeType='XML'
+						additive="sum" 
+						attributeName="transform" 
+						type="rotate"
+						from='0,90,90'
+						to="45,90,90"
+						begin='0s'
+						dur="3s"
+						fill="freeze"
+					/>
+					<animateTransform 
+						attributeType='XML'
+						additive="sum" 
+						attributeName="transform" 
+						type="scale"
+						from='1'
+						to="2"
+						begin='0s'
+						dur="3s"
+						fill="freeze"
+					/>
+				</rect>
+			</g>
+		</svg>
+	</div>
+</body>
+</html>
